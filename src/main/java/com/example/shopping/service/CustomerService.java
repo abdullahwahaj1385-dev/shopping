@@ -28,6 +28,10 @@ public class CustomerService {
 
     }
 
+    public Customer findById(Long id) {
+        return null;
+    }
+
 }
 
 
