@@ -5,6 +5,7 @@ import com.example.shopping.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -14,25 +15,32 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     //metodo per ottenere da db tutta la lista clienti
-    public List<Customer> findAll(){
+    public List<Customer> findAll() {
         return customerRepository.findAll();
     }
 
     public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
-     // la funzionalità
-    public void deleteCustomer(Long id){
+
+    // la funzionalità
+    public void deleteCustomer(Long id) {
 
         customerRepository.deleteById(id);
 
 
     }
 
+
     public Customer findById(Long id) {
-        return null;
+        return customerRepository.findById(id).orElse(null);
     }
 
+    
 }
+
+
+
+
 
 

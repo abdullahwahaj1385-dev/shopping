@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<Order> findAll(){
+
+    public List<Order> findAll() {
         return orderRepository.findAll();
     }
 
@@ -22,10 +22,12 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public void deleteOrder(Long id){
 
+    public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
-
     }
 
+    public Order findById(Long id) {
+        return orderRepository.findById(id).orElse(null);
+    }
 }

@@ -18,4 +18,6 @@ public class ProductDTO {
 
     public String getQuantita() { return quantita; }
     public void setQuantita(String quantita) { this.quantita = quantita; }
+
+
 }
