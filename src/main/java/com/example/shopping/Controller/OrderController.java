@@ -31,12 +31,12 @@ public class OrderController {
         try {
             Order nuovoOrdine = new Order();
 
-            /*
-             nuovoOrdine.setOrderNumber(orderDto.getOrderNumber());
-             nuovoOrdine.setTotalAmount(orderDto.getTotalAmount());
-             nuovoOrdine.setOrderDate(orderDto.getOrderDate());
 
-             */
+             nuovoOrdine.setIdOrdine(orderDto.getIdOrdine());
+             nuovoOrdine.setTotale(orderDto.getTotale());
+             nuovoOrdine.setStato(orderDto.getStato());
+
+
 
             orderService.saveOrder(nuovoOrdine);
             return "ordine inserito";
@@ -55,11 +55,11 @@ public class OrderController {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ordine non trovato");
             }
 
-            /*
-             existingOrder.setTotalAmount(orderDto.getTotalAmount());
-             existingOrder.setStatus(orderDto.getStatus());
 
-             */
+            existingOrder.setIdOrdine(orderDto.getIdOrdine());
+            existingOrder.setTotale(orderDto.getTotale());
+            existingOrder.setStato(orderDto.getStato());
+
 
             orderService.saveOrder(existingOrder);
             return "ordine modificato";

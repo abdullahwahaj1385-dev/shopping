@@ -51,13 +51,13 @@ public class ProductController {
             if (existingProduct == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Prodotto non trovato");
             }
-            /*
 
-            existingProduct.setName(productDto.getName());
-            existingProduct.setDescription(productDto.getDescription());
-            existingProduct.setPrice(productDto.getPrice());
-            existingProduct.setStock(productDto.getStock());
-            */
+
+            existingProduct.setNomeProduct(productDto.getNomeProduct());
+            existingProduct.setPrezzo(productDto.getPrezzo());
+            existingProduct.setCodice(productDto.getCodice());
+            existingProduct.setQuantita(productDto.getQuantita());
+
 
             productService.saveProduct(existingProduct);
             return "prodotto modificato";

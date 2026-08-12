@@ -14,7 +14,7 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    //metodo per ottenere da db tutta la lista clienti
+
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
@@ -36,7 +36,7 @@ public class CustomerService {
         return customerRepository.findById(id).orElse(null);
     }
 
-    
+
 }
 
 
